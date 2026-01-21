@@ -3,24 +3,74 @@ html {
   scroll-behavior: smooth;
 }
 
+/* === Sidebar configuration + order === */
+.wy-side-nav-search {
+  /* Teal style like PHYTEC BSP docs */
+  background: linear-gradient(to bottom, #106d72 0%, #106d72 100%);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+/* Unhide default logo and place after subtitle */
+.wy-side-nav-search img.logo {
+  display: block;
+  order: 3;
+  width: 240px !important; /* increased size */
+  height: auto;
+  margin: 2px auto 0;
+}
+
 /* === Sidebar Header Title Styling === */
 .wy-side-nav-search > a.icon.icon-home {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
   line-height: 1.2em;
   white-space: normal;
-  padding: 8px 0;
-  color: black !important;
+  padding: 8px 0 0 0;
+  margin-bottom: 0px;
+  color: #ffffff !important; /* Title in white */
   position: relative;
+  order: 1;
 }
+
+/* === Add "QUICK START GUIDE" and logo after the title === */
 .wy-side-nav-search > a.icon.icon-home::after {
   content: 'QUICK START GUIDE';
   display: block;
   font-size: 14px;
   font-weight: bold;
-  margin-top: 2px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  padding: 0;
+  color: #ffffff; /* Subtitle in white */
+  letter-spacing: 0.3px;
+  order: 2;
+}
+
+/* Remove anchor-specific logo sizing to avoid conflicts */
+
+/* Search form immediately after logo */
+.wy-side-nav-search form,
+.wy-side-nav-search [role="search"],
+.wy-side-nav-search > div[role="search"] {
+  order: 4;
+  margin-top: 6px;
+}
+
+/* Remove margin from search form */
+.wy-side-nav-search form {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+/* === Search box styling === */
+.wy-side-nav-search form {
+  margin-top: 15px;
 }
 
 /* === Layout & Width === */
