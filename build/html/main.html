@@ -1,0 +1,2224 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RB-DCU i.MX 6ULL &mdash; RB-DCU i.MX 6ULL 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6c97b1f9" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/sidebar-toggle.js?v=e74f0433"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="RB-DCU i.MX 6ULL QUICK START GUIDE" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            RB-DCU i.MX 6ULL
+              <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Guide Sections</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RB-DCU i.MX 6ULL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rb-dcu-i-mx-6ull-board-top-view">RB-DCU i.MX 6ULL Board Top View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rb-dcu-i-mx-6ull-board-bottom-view">RB-DCU i.MX 6ULL Board Bottom View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rb-dcu-i-mx-6ull-board-hardware-details">RB-DCU i.MX 6ULL Board Hardware Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rb-dcu-i-mx-6ull-board-block-diagram">RB-DCU i.MX 6ULL Board Block Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#power-supply-connections">Power Supply Connections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#power-supply-connector-p2">Power Supply Connector (P2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power-supply-led-d3">Power Supply LED (D3)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ttl-debug-port-j1">TTL Debug Port (J1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boot-mode-configuration-selection-j9">Boot Mode Configuration Selection (J9)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-reset-button-sw2">System Reset Button (SW2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#li-ion-battery-charger-p7">Li-ion Battery Charger (P7)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rtc-p11">RTC (P11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-led-d4">User LED (D4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-switch-sw1">User Switch (SW1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mini-pcie-p8">Mini PCIe (P8)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micro-sim-socket-j4">Micro SIM Socket (J4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#esim-u16">eSIM (U16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wi-fi-module-u18">Wi-Fi Module (U18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ethernet-connectivity-j3">Ethernet Connectivity (J3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#db9-pin-mating-p4">DB9 Pin Mating (P4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rf-connector-1-p9">RF-Connector 1 (P9)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rf-connector-2-p12">RF-Connector 2 (P12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optical-uart-d30-d31">Optical UART (D30 &amp; D31)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spi-lcd-header-p10">SPI-LCD Header (P10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tamper-pins-tp48-tp49">Tamper Pins (TP48, TP49)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#digital-input-hdr-p5">Digital Input HDR (P5)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#micro-sd-card-j2">Micro SD Card (J2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bluetooth-u14">Bluetooth (U14)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accelerometer-gyroscope-3-axis-embedded-temperature-sensor-u23">Accelerometer, Gyroscope - 3 Axis (Embedded Temperature Sensor) (U23)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#sd-card-setup-guide">SD Card Setup Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sd-card-partition-setup">SD Card Partition Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copying-files-images-to-sd-card">Copying Files(images) to SD Card</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#how-to-handle-the-board">How to Handle the Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#how-to-connect-the-board-with-a-pc">How to Connect the Board with a PC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#connect-to-the-board-via-serial-console-minicom">Connect to the Board via Serial Console (Minicom)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connect-to-the-board-via-ssh-network-access">Connect to the Board via SSH (Network Access)</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RB-DCU i.MX 6ULL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RB-DCU i.MX 6ULL</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rb-dcu-i-mx-6ull">
+<h1>RB-DCU i.MX 6ULL<a class="headerlink" href="#rb-dcu-i-mx-6ull" title="Link to this heading"></a></h1>
+<section id="rb-dcu-i-mx-6ull-board-top-view">
+<h2>RB-DCU i.MX 6ULL Board Top View<a class="headerlink" href="#rb-dcu-i-mx-6ull-board-top-view" title="Link to this heading"></a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/top.jpeg"><img alt="RB-DCU i.MX 6ULLL Top View" src="_images/top.jpeg" style="width: 800px;" />
+</a>
+</figure>
+<div style="text-align:center; margin-top:10px; font-style: italic; font-weight: bold;">
+  Figure 1
+</div></section>
+<section id="rb-dcu-i-mx-6ull-board-bottom-view">
+<h2>RB-DCU i.MX 6ULL Board Bottom View<a class="headerlink" href="#rb-dcu-i-mx-6ull-board-bottom-view" title="Link to this heading"></a></h2>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/bottom.jpeg"><img alt="RB-DCU i.MX 6ULLL Bottom View" src="_images/bottom.jpeg" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 2</strong></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="rb-dcu-i-mx-6ull-board-hardware-details">
+<h2>RB-DCU i.MX 6ULL Board Hardware Details<a class="headerlink" href="#rb-dcu-i-mx-6ull-board-hardware-details" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5.4%" />
+<col style="width: 17.9%" />
+<col style="width: 16.1%" />
+<col style="width: 16.1%" />
+<col style="width: 8.9%" />
+<col style="width: 35.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Req</p></th>
+<th class="head"><p>Hardware</p></th>
+<th class="head"><p>Part No</p></th>
+<th class="head"><p>Interface</p></th>
+<th class="head"><p>Connector</p></th>
+<th class="head"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HWR1</p></td>
+<td><p>Boot Mode</p></td>
+<td></td>
+<td><p>Mode-0 &amp; Mode-1</p></td>
+<td><p>P1</p></td>
+<td><p>(2+3) Internal Boot, (1+2) Serial Boot</p></td>
+</tr>
+<tr class="row-odd"><td><p>HWR2</p></td>
+<td><p>Power Session</p></td>
+<td></td>
+<td><p>Circuit –DC 5V</p></td>
+<td><p>P2</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR3</p></td>
+<td><p>External RTC</p></td>
+<td><p>RV-4162-C7</p></td>
+<td><p>I2C2</p></td>
+<td><p>P3</p></td>
+<td><p>(2+3) External RTC</p></td>
+</tr>
+<tr class="row-odd"><td><p>HWR4</p></td>
+<td><p>Internal RTC</p></td>
+<td></td>
+<td><p>SOM RTC</p></td>
+<td><p>P3</p></td>
+<td><p>(1+2) Internal RTC</p></td>
+</tr>
+<tr class="row-even"><td><p>HWR5</p></td>
+<td><p>User LED</p></td>
+<td><p>RGB LED</p></td>
+<td><p>GPIO</p></td>
+<td><p>D4, D7</p></td>
+<td><p>GPIO02_11(), GPIO02_12()</p></td>
+</tr>
+<tr class="row-odd"><td><p>HWR6</p></td>
+<td><p>User Switch</p></td>
+<td></td>
+<td><p>GPIO</p></td>
+<td><p>SW1</p></td>
+<td><p>GPIO02_08()</p></td>
+</tr>
+<tr class="row-even"><td><p>HWR7</p></td>
+<td><p>Reset Switch</p></td>
+<td></td>
+<td><p>GPIO</p></td>
+<td><p>SW2</p></td>
+<td><p>SOM Reset available; Additional GPIO01_13() (DNM)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HWR8</p></td>
+<td><p>Power ON Indication</p></td>
+<td></td>
+<td><p>Panel LED</p></td>
+<td><p>D3</p></td>
+<td><p>Board Power ON Indication</p></td>
+</tr>
+<tr class="row-even"><td><p>HWR9</p></td>
+<td><p>Mini PCIe</p></td>
+<td></td>
+<td><p>USB1</p></td>
+<td><p>P8</p></td>
+<td><p>Contains eSIM(DNM), SIM, USB-1, SOM Reset, GPIO Reset GPIO01_04</p></td>
+</tr>
+<tr class="row-odd"><td><p>HWR10</p></td>
+<td><p>Micro SIM Socket</p></td>
+<td></td>
+<td><p>DATA &amp; CLK signals</p></td>
+<td><p>J4</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR11</p></td>
+<td><p>eSIM</p></td>
+<td></td>
+<td><p>DATA &amp; CLK signals</p></td>
+<td><p>U16</p></td>
+<td><p>Chip not mounted</p></td>
+</tr>
+<tr class="row-odd"><td><p>HWR12</p></td>
+<td><p>WiFi Module</p></td>
+<td><p>LILY-W131</p></td>
+<td><p>USB2</p></td>
+<td><p>U18</p></td>
+<td><p>GPIO5_0 Power Seq, GPIO1_18 Radio Ctrl, Wakeup, Power Enable GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>HWR13</p></td>
+<td><p>Ethernet</p></td>
+<td></td>
+<td><p>Ethernet PHY</p></td>
+<td><p>J3</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR14</p></td>
+<td><p>RS232</p></td>
+<td></td>
+<td><p>UART2</p></td>
+<td><p>P4</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR15</p></td>
+<td><p>RS485</p></td>
+<td></td>
+<td><p>UART6</p></td>
+<td><p>P4</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR16</p></td>
+<td><p>Optical UART</p></td>
+<td></td>
+<td><p>UART7</p></td>
+<td><p>D31, D30</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR17</p></td>
+<td><p>RF Connector 1</p></td>
+<td></td>
+<td><p>UART4</p></td>
+<td><p>P9</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR18</p></td>
+<td><p>RF Connector 1 GPIOs</p></td>
+<td></td>
+<td><p>GPIO</p></td>
+<td><p>P9</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR19</p></td>
+<td><p>RF Connector 2</p></td>
+<td></td>
+<td><p>UART3</p></td>
+<td><p>P12</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR20</p></td>
+<td><p>RF Connector 2 GPIOs</p></td>
+<td></td>
+<td><p>GPIO</p></td>
+<td><p>P12</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR21</p></td>
+<td><p>TPM</p></td>
+<td><p>SLB_9672XU2.0_UQFN_32P</p></td>
+<td><p>SPI2, GPIO</p></td>
+<td><p>U24</p></td>
+<td><p>Disable I2C and test SPI functionality</p></td>
+</tr>
+<tr class="row-odd"><td><p>HWR22</p></td>
+<td><p>TPM</p></td>
+<td><p>SLB_9672XU2.0_UQFN_32P</p></td>
+<td><p>I2C2, GPIO</p></td>
+<td><p>U24</p></td>
+<td><p>Disable SPI and test I2C functionality</p></td>
+</tr>
+<tr class="row-even"><td><p>HWR23</p></td>
+<td><p>Accelerometer, Gyroscope (3-Axis)</p></td>
+<td><p>LSM6DSLTR</p></td>
+<td><p>I2C1, GPIO</p></td>
+<td><p>U23</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR24</p></td>
+<td><p>Tamper Pins</p></td>
+<td></td>
+<td><p>GPIO</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR25</p></td>
+<td><p>SPI-LCD Header</p></td>
+<td></td>
+<td><p>SPI1</p></td>
+<td><p>P10</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR26</p></td>
+<td><p>Digital Input Header</p></td>
+<td></td>
+<td><p>GPIO</p></td>
+<td><p>P5</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR27</p></td>
+<td><p>Micro SD Card</p></td>
+<td></td>
+<td><p>SDIO</p></td>
+<td><p>J2</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR28</p></td>
+<td><p>TTL Debug Port</p></td>
+<td><p>Debug_Port</p></td>
+<td><p>UART1</p></td>
+<td><p>J1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR29</p></td>
+<td><p>Bluetooth</p></td>
+<td><p>BGM220PC22HNA2</p></td>
+<td><p>UART5, Watchdog</p></td>
+<td><p>U14</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR30</p></td>
+<td><p>Bluetooth Power Switch</p></td>
+<td><p>TPS22965NDSGR</p></td>
+<td><p>GPIO5_3_BLE_PWR_EN</p></td>
+<td><p>U15</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HWR31</p></td>
+<td><p>Li-ion Battery Charger</p></td>
+<td></td>
+<td><p>GPIO1_3_ADC1_IN3</p></td>
+<td><p>P7</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HWR32</p></td>
+<td><p>Boot Mode Configuration Selection</p></td>
+<td><p>61300211121</p></td>
+<td><p>eMMC, SD Card</p></td>
+<td><p>J9</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rb-dcu-i-mx-6ull-board-block-diagram">
+<h2>RB-DCU i.MX 6ULL Board Block Diagram<a class="headerlink" href="#rb-dcu-i-mx-6ull-board-block-diagram" title="Link to this heading"></a></h2>
+<div style="text-align: center; margin-bottom: 5px; margin-left: 90px; margin-top: 40px;">
+  <img src="_static/dcu_block.jpeg" alt="RB-DCU i.MX 6ULL Block Diagram" style="width: 900px;" />
+</div><div style="margin-top: 10px; text-align: center; font-style: italic; font-weight: bold;">
+  Figure 3
+</div></section>
+<section id="power-supply-connections">
+<h2>Power Supply Connections<a class="headerlink" href="#power-supply-connections" title="Link to this heading"></a></h2>
+<section id="power-supply-connector-p2">
+<h3>Power Supply Connector (P2)<a class="headerlink" href="#power-supply-connector-p2" title="Link to this heading"></a></h3>
+<p>Power management for RB-DCU i.MX 6ULL-1P1 is come up with either USB or
+DC 5V.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/powersupply.jpeg"><img alt="Power Supply Connector" src="_images/powersupply.jpeg" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 4: Power Supply Connector (P2)</strong></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>VCC5V_MAIN</p></td>
+<td><p>+5V power supply</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>GND</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>SHILD</p></td>
+<td><p>Shield</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 4: Pin Assignment of P2
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, the board uses the 5 V DC adapter as its primary power source.</p>
+</div>
+</section>
+<section id="power-supply-led-d3">
+<h3>Power Supply LED (D3)<a class="headerlink" href="#power-supply-led-d3" title="Link to this heading"></a></h3>
+<p>The LED D3 indicates the presence of the 3.3 V supply voltage generated from
+the 5V input voltage.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/po_led.jpeg"><img alt="Power Supply LED" src="_images/po_led.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 5: Power Supply LED (D3)</strong></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After applying power, D3 should light up almost immediately—if it doesn’t, check that your 5 V adapter is delivering the correct voltage and that the barrel jack is firmly seated.</p>
+</div>
+</section>
+</section>
+<section id="ttl-debug-port-j1">
+<h2>TTL Debug Port (J1)<a class="headerlink" href="#ttl-debug-port-j1" title="Link to this heading"></a></h2>
+<p>This port usually provides a <strong>serial communication interface</strong> that follows the
+<strong>UART1 (Universal Asynchronous Receiver-Transmitter)</strong> protocol with TTL
+voltage levels.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="_images/debug.jpeg"><img alt="TTL Debug Port (J1)" src="_images/debug.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 6: TTL Debug Port (J1)</strong></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X_UART1_TX_DCE</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>X_UART1_RX_DCE</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 6: Pin Assignment of J1
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The TTL debug port (J1) uses 3.3 V logic levels (TX, RX, GND). Do <strong>not</strong> connect it directly to RS-232 interfaces—use a USB-to-TTL serial adapter or level shifter to prevent damage.</p>
+</div>
+</section>
+<section id="boot-mode-configuration-selection-j9">
+<h2>Boot Mode Configuration Selection (J9)<a class="headerlink" href="#boot-mode-configuration-selection-j9" title="Link to this heading"></a></h2>
+<p>The RB-DCU i.MX 6ULL-1P1 has two defined boot sequences which can be
+selected by configuring jumper J9.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If J9 is left open (eMMC boot) and no valid image is present on the on-board flash, the board will hang during startup. Always confirm your boot media contains a valid bootloader.</p>
+</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="_images/bootmode.jpeg"><img alt="Boot Mode Selection Jumper J9" src="_images/bootmode.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 7: Boot Mode Selection Jumper (J9)</strong></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Boot mode</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Boot mode 1(with jumper)</p></td>
+<td><p>MMC boot</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boot mode 2(without jumper)</p></td>
+<td><p>EMMC boot</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 7: Pin Assignment of J9
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jumper J9 selects between SD-card (MMC) boot and on-board eMMC boot. Ensure the board is <strong>powered off</strong> before changing the jumper position to avoid unintended writes or boot failures.</p>
+</div>
+</section>
+<section id="system-reset-button-sw2">
+<h2>System Reset Button (SW2)<a class="headerlink" href="#system-reset-button-sw2" title="Link to this heading"></a></h2>
+<p>The RB-DCU i.MX 6ULL-1P1 is equipped with a system reset button at SW2.
+Pressing this button will toggle the <strong>X_nRESET_IN</strong>,causing the module to
+reset.Additionally,the reset signal <strong>X_nRESET_OUT(X_RESET#)</strong> is generated on
+the module to also reset the peripherals on the carrier board.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pressing SW2 abruptly restarts the CPU and peripherals without a clean shutdown—unsaved data in volatile memory or on attached storage may be lost. Use it sparingly and only when necessary.</p>
+</div>
+<br><figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="_images/reset.jpeg"><img alt="System Reset Button S2" src="_images/reset.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 8: System Reset Button (SW2)</strong></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X_nRESET_IN</p></td>
+<td><p>Active-low input reset signal to the processor module, triggered by SW2.</p></td>
+</tr>
+<tr class="row-odd"><td><p>X_nRESET_OUT (X_RESET#)</p></td>
+<td><p>Active-low output reset signal from the module to reset peripherals on the carrier board.</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 8: Pin Assignment of SW2
+</div></section>
+<section id="li-ion-battery-charger-p7">
+<h2>Li-ion Battery Charger (P7)<a class="headerlink" href="#li-ion-battery-charger-p7" title="Link to this heading"></a></h2>
+<p>External Li-ion battery (3.7V) is used to boot the board.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Li-ion batteries can be hazardous if over-discharged or short-circuited. Always use a proper Li-ion charging circuit and respect the battery’s current and temperature limits to avoid fire or damage.</p>
+</div>
+<br><figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="_images/liion.jpeg"><img alt="Li-ion Battery Charger" src="_images/liion.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 9: Li-ion Battery Charger (P7)</strong></span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Connector P7 lets you attach a 3.7 V Li-ion battery for backup or standalone operation—ensure the battery voltage does not exceed 4.2 V when fully charged.</p>
+</div>
+<br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>VBAT_OUT(BAT_TS)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>BAT_TS</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 9: Pin Assignment of P7
+</div><br><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To monitor battery health, measure the voltage on the <strong>BAT_TS</strong> pin (Pin-2). You can read this via an ADC channel on the SOM to implement low-battery shutdown or alert notifications in your application.</p>
+</div>
+</section>
+<section id="rtc-p11">
+<h2>RTC (P11)<a class="headerlink" href="#rtc-p11" title="Link to this heading"></a></h2>
+<p>The RB-DCU i.MX 6ULL-1P1 features an external RTC at P11 in addition to the
+internal RTC.They are used for real-time or time-driven applications. The 2-pole
+pin header P11 can be used to connect an external battery to keep time up to
+date. Internal RTC is not mounted in board.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="_images/rtc.jpeg"><img alt="RTC" src="_images/rtc.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 10: RTC (P11)</strong></span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>GND</p></td>
+<td><p>Ground</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>VCC_3V3</p></td>
+<td><p>Backup battery voltage</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 10.1: Pin Assignment of P11
+</div><br><br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>INT_RTC</p></td>
+<td><p>Internel RTC</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>RTC_BACKUP</p></td>
+<td><p>RTC backup</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>EXT_RTC</p></td>
+<td><p>External RTC</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 10.2: Pin Assignment of P3
+</div></section>
+<section id="user-led-d4">
+<h2>User LED (D4)<a class="headerlink" href="#user-led-d4" title="Link to this heading"></a></h2>
+<p>The RB-DCU i.MX 6ULL-1P1 is populated with one user LEDs to indicate the
+status of the user led, as well as the power supply voltage. View of the
+RB-DCU i.MX 6ULL-1P1 (top) shows the location of the LED.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="_images/d4.jpeg"><img alt="D4" src="_images/d4.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 11: (D4)</strong></span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LED</p></th>
+<th class="head"><p>Colour</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Section</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>D4</p></td>
+<td><p>Green</p></td>
+<td><p>User LED1</p></td>
+<td><p>User GPIO Config_RGB LED(D4)</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 11: Pin Assignment of D4
+</div></section>
+<section id="user-switch-sw1">
+<h2>User Switch (SW1)<a class="headerlink" href="#user-switch-sw1" title="Link to this heading"></a></h2>
+<p>The RB-DCU i.MX 6ULL-1P1 is populated with Single user Switch to check the
+INPUT operation of the board.**X_GPIO2_IO8_INT_SW** is used for switch.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="_images/user_switch.jpeg"><img alt="Switch1" src="_images/user_switch.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 12: Switch1 (SW1)</strong></span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X_GPIO2_IO8_INT_SW</p></td>
+<td><p>GPIO signal connected to SW1. Used to detect switch press in the software layer.</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 12: Pin Assignment of SW1
+</div></section>
+<section id="mini-pcie-p8">
+<h2>Mini PCIe (P8)<a class="headerlink" href="#mini-pcie-p8" title="Link to this heading"></a></h2>
+<p><strong>USB-OTG interface</strong> signals are routed through the <strong>Mini PCIe connector (P8)</strong>,
+which allows devices connected via mPCIe to communicate using the USB
+protocol. The SIM/UIM card signals of a connected mPCIe module can be made
+available at expansion connector J4.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Many mPCIe cards expect a full 5 V supply on the slot’s VCC pin—do <strong>not</strong> insert a USB-only module without confirming the board’s power capabilities, as overcurrent can cause brown-outs or damage the board.</p>
+</div>
+<br><figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="_images/mini.jpeg"><img alt="Mini PCIe Connector" src="_images/mini.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 13: Mini PCIe Connector (P8)</strong></span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 10.5%" />
+<col style="width: 39.5%" />
+<col style="width: 10.5%" />
+<col style="width: 39.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>VCC_3V3_GSM</p></td>
+<td><p>29</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>VCC_3V3_GSM</p></td>
+<td><p>30</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Not used</p></td>
+<td><p>31</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>GND</p></td>
+<td><p>32</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Not used</p></td>
+<td><p>33</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Not used</p></td>
+<td><p>34</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>eSIM_RST</p></td>
+<td><p>35</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>SIM_VCC</p></td>
+<td><p>36</p></td>
+<td><p>X_USB_OTG_N</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>GND</p></td>
+<td><p>37</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>SIM_IO</p></td>
+<td><p>38</p></td>
+<td><p>X_USB_OTG_P</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>Not used</p></td>
+<td><p>39</p></td>
+<td><p>VCC_3V3_GSM</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>SIM_CLK</p></td>
+<td><p>40</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>SIM_eSIM_VDD</p></td>
+<td><p>41</p></td>
+<td><p>VCC_3V3_GSM</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>SIM_RST</p></td>
+<td><p>42</p></td>
+<td><p>WLAN_EN_LED</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>GND</p></td>
+<td><p>43</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>SIM_VPP</p></td>
+<td><p>44</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td><p>eSIM_CLK</p></td>
+<td><p>45</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td><p>GND</p></td>
+<td><p>46</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td><p>eSIM_DATA</p></td>
+<td><p>47</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>VCC_3V3_GSM</p></td>
+<td><p>48</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>GND</p></td>
+<td><p>49</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>X_RESET#</p></td>
+<td><p>50</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>Not used</p></td>
+<td><p>51</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>VCC_3V3_GSM</p></td>
+<td><p>52</p></td>
+<td><p>VCC_3V3_GSM</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td><p>Not used</p></td>
+<td><p>S1</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>26</p></td>
+<td><p>GND</p></td>
+<td><p>S2</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>27</p></td>
+<td><p>GND</p></td>
+<td><p>M1</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>28</p></td>
+<td><p>Not used</p></td>
+<td><p>M2</p></td>
+<td><p>Not used</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 13: Pin Assignment of P8
+</div></section>
+<section id="micro-sim-socket-j4">
+<h2>Micro SIM Socket (J4)<a class="headerlink" href="#micro-sim-socket-j4" title="Link to this heading"></a></h2>
+<p>A Micro SIM Socket(J4) is provided to enable cellular connectivity through a
+mobile network and a smooth extraction function by Push-in/ Push-out of
+card.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do <strong>not</strong> insert or remove the SIM card while the board is powered on. Doing so may cause hardware damage or corrupt modem communication.</p>
+</div>
+<br><figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="_images/sim.jpeg"><img alt="micro SIM socket" src="_images/sim.jpeg" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 14: Micro SIM Socket (J4)</strong></span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12.1%" />
+<col style="width: 37.9%" />
+<col style="width: 12.1%" />
+<col style="width: 37.9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Left Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Right Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>C1</p></td>
+<td><p>SIM_VCC</p></td>
+<td><p>C7</p></td>
+<td><p>TP32</p></td>
+</tr>
+<tr class="row-odd"><td><p>C2</p></td>
+<td><p>SIM_RST</p></td>
+<td><p>S1</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>C3</p></td>
+<td><p>SIM_CLK</p></td>
+<td><p>S2</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>C4</p></td>
+<td><p>Not used</p></td>
+<td><p>S3</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>C5</p></td>
+<td><p>GND</p></td>
+<td><p>S4</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>C6</p></td>
+<td><p>SIM_VPP</p></td>
+<td><p>CD</p></td>
+<td><p>SIM_VCC</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 14: Pin Assignment of J4
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This socket is designed for <strong>Micro SIM</strong> cards only. Using a Nano or full-size SIM with adapters may damage the socket.</p>
+</div>
+</section>
+<section id="esim-u16">
+<h2>eSIM (U16)<a class="headerlink" href="#esim-u16" title="Link to this heading"></a></h2>
+<p>eSIM offers significant advantages over traditional SIMs, particularly in terms
+of flexibility, scalability, and ease of management, especially for IoT and
+embedded systems that rely on cellular connectivity.eSIM is not mounted.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="_images/esim.jpeg"><img alt="eSIM (U16)" src="_images/esim.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 15: eSIM (U16)</strong></span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>eSIM (Embedded SIM) is a programmable SIM card embedded directly into the device, eliminating the need for a physical SIM card slot. It allows remote provisioning and management of mobile network profiles.</p>
+</div>
+<br><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>eSIM is ideal for <strong>remote or hard-to-access deployments</strong>, where replacing a physical SIM card would be difficult.</p>
+</div>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>GND</p></td>
+<td><p>6</p></td>
+<td><p>eSIM_CLK</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>SIM_eSIM_VDD</p></td>
+<td><p>7</p></td>
+<td><p>eSIM_RST</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>eSIM_DATA</p></td>
+<td><p>8</p></td>
+<td><p>SIM_eSIM_VDD</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Not used</p></td>
+<td><p>9</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Not used</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 15: Pin Assignment of U16
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The eSIM (U16) module is <strong>not pre-mounted</strong> on the board. If eSIM functionality is required, you must mount a compatible eSIM module manually.</p>
+</div>
+</section>
+<section id="wi-fi-module-u18">
+<h2>Wi-Fi Module (U18)<a class="headerlink" href="#wi-fi-module-u18" title="Link to this heading"></a></h2>
+<p>The LILY-W1 series ultra-compact Wi-Fi front end modules include an
+integrated MAC/baseband processor and RF front end components. The
+modules connect to a host via USB interface. They provide simultaneous
+operation as a station and a micro access point for up to 8 clients.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="_images/wifi.jpeg"><img alt="WIFI Module (U18)" src="_images/wifi.jpeg" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 16: Wi-Fi Module (U18)</strong></span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6.5%" />
+<col style="width: 43.5%" />
+<col style="width: 6.5%" />
+<col style="width: 43.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Not used</p></td>
+<td><p>20</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Not used</p></td>
+<td><p>21</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Not used</p></td>
+<td><p>22</p></td>
+<td><p>VCC_1V8</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>VCC_3V3_WIFI_MOD</p></td>
+<td><p>23</p></td>
+<td><p>X_USB_OTG2_D_P</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Not used</p></td>
+<td><p>24</p></td>
+<td><p>X_USB_OTG2_D_N</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>GND</p></td>
+<td><p>25</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Not used</p></td>
+<td><p>26</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>TP36</p></td>
+<td><p>27</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>TP36</p></td>
+<td><p>28</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>GND</p></td>
+<td><p>29</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>GND</p></td>
+<td><p>30</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>UFL Coax (J5)</p></td>
+<td><p>31</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>GND</p></td>
+<td><p>32</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>WIFI_PDn</p></td>
+<td><p>33</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>Not used</p></td>
+<td><p>34</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>Not used</p></td>
+<td><p>35</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td><p>WAKE_UP_1V8_IO</p></td>
+<td><p>36</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td><p>Not used</p></td>
+<td><p>37</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td><p>X_HOST_WAKE_UP_3V3IO</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 16: Pin Assignment of U18
+</div></section>
+<section id="ethernet-connectivity-j3">
+<h2>Ethernet Connectivity (J3)<a class="headerlink" href="#ethernet-connectivity-j3" title="Link to this heading"></a></h2>
+<p>The Ethernet interfaces of the RB-DCU i.MX 6ULL-1P1 are accessible at RJ45
+connector(J3). Ethernet is directly brought out from the SOM’s Ethernet
+interface ENET1.Ethernet interface is configured as 10/100Base-T networks.
+The LEDs for LINK (green) and SPEED (yellow) indications are integrated into
+the connector.</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="_images/ethernet.jpeg"><img alt="Ethernet Interfaces at Connector (J3)" src="_images/ethernet.jpeg" style="width: 200px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 17: Ethernet Interfaces at Connector (J3)</strong></span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Ethernet port (J3)</strong> uses the <strong>ENET1 interface</strong> from the SOM and supports <strong>10/100 Mbps</strong> operation. Link and activity status are indicated through integrated <strong>bi-color LEDs</strong> (green for LINK, yellow for SPEED).</p>
+</div>
+</section>
+<section id="db9-pin-mating-p4">
+<h2>DB9 Pin Mating (P4)<a class="headerlink" href="#db9-pin-mating-p4" title="Link to this heading"></a></h2>
+<p>The RB-DCU i.MX 6ULL-1P1 provides up to 4 high-speed universal asynchronous
+interfaces. UART2 at RS232(U3) and UART6 at RS485(U11) is available at DB9
+pin mating Male connector(P4).</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="_images/rs232_rs485.jpeg"><img alt="RS-232 and RS‑485 Interface Connectors at P4" src="_images/rs232_rs485.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 18: RS-232 and RS‑485 Interface Connectors at (P4)</strong></span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>GND</p></td>
+<td><p>2</p></td>
+<td><p>DB_RS232_RX_1</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>DB_RS232_TX_1</p></td>
+<td><p>4</p></td>
+<td><p>DB_RS485_N</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>GND</p></td>
+<td><p>6</p></td>
+<td><p>DB_RS485_P</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>DB_RS232_RX_2</p></td>
+<td><p>8</p></td>
+<td><p>DB_RS232_TX_2</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>GND</p></td>
+<td><p>10</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 18: Pin Assignment of P4
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On the RB-DCU i.MX 6ULL-1P1 board:</p>
+<ul class="simple">
+<li><p><strong>RS232 communication uses UART2</strong></p></li>
+<li><p><strong>RS485 communication uses UART6</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="rf-connector-1-p9">
+<h2>RF-Connector 1 (P9)<a class="headerlink" href="#rf-connector-1-p9" title="Link to this heading"></a></h2>
+<p>RF (Radio Frequency) connectors are used for interfacing with wireless
+communication modules and antennas. These connectors allow to send and
+receive RF signals, which can be essential for applications involving Wi-Fi,
+Bluetooth, GPS, cellular networks, and other wireless communication
+technologies.RF connector1 is using <strong>UART4 interface</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not hot-plug RF modules into the connector while the board is powered on,
+as this may cause signal disruption or hardware damage.</p>
+</div>
+<br><figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="_images/rf1.jpeg"><img alt="RF_CONNECTOR-1 (P9)" src="_images/rf1.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 19: RF-Connector-1 (P9)</strong></span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>VCC_3V3</p></td>
+<td><p>2</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>VCC_3V3</p></td>
+<td><p>4</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>X_UART4_TX</p></td>
+<td><p>6</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>X_UART4_RX</p></td>
+<td><p>8</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>X_GPIO2_IO9_RF1_RST</p></td>
+<td><p>10</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>X_GPIO5_IO9_RF1_1</p></td>
+<td><p>12</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>X_GPIO2_IO14_RF1_2</p></td>
+<td><p>14</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 19: Pin Assignment of P9
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>RF_CONNECTOR 1 is typically connected to external antennas or RF modules
+that support UART communication. Confirm the module’s specifications
+before connection.</p>
+</div>
+</section>
+<section id="rf-connector-2-p12">
+<h2>RF-Connector 2 (P12)<a class="headerlink" href="#rf-connector-2-p12" title="Link to this heading"></a></h2>
+<p>RF (Radio Frequency) connectors are used for interfacing with wireless
+communication modules and antennas. These connectors allow to send and
+receive RF signals, which can be essential for applications involving Wi-Fi,
+Bluetooth, GPS, cellular networks, and other wireless communication
+technologies.RF connector1 is using <strong>UART3 interface</strong>.</p>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="_images/rf2.jpeg"><img alt="RF_CONNECTOR 2 (P12)" src="_images/rf2.jpeg" style="width: 280px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 20: RF-Connector-2 (P12)</strong></span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>VCC_3V</p></td>
+<td><p>2</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>VCC_3V</p></td>
+<td><p>4</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>X_UART3_TX</p></td>
+<td><p>6</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>X_UART3_RX</p></td>
+<td><p>8</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>X_GPIO1_IO10_RF2_RST</p></td>
+<td><p>10</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>X_GPIO2_IO15_RF2_1</p></td>
+<td><p>12</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>X_GPIO1_IO14_RF2_2</p></td>
+<td><p>14</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 20: Pin Assignment of P12
+</div></section>
+<section id="optical-uart-d30-d31">
+<h2>Optical UART (D30 &amp; D31)<a class="headerlink" href="#optical-uart-d30-d31" title="Link to this heading"></a></h2>
+<p>An “Optical UART” typically refers to a communication interface that combines
+the principles of UART (Universal Asynchronous Receiver/Transmitter) with
+optical signalling for data transmission. In this system, instead of electrical
+signals transmitted over copper wires, light pulses are used, often through
+optical fibbers or LEDs and photodiodes. The benefits of optical
+communication include immunity to electromagnetic interference (EMI) and
+enhanced isolation for sensitive systems. It is using UART7 interface and for
+transmit and receive data pins are:</p>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="_images/optical.jpeg"><img alt="Optical UART" src="_images/optical.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 21: Optical UART (D30 &amp; D31)</strong></span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X_LCD_D16_UART7_TX</p></td>
+<td><p>UART7 Transmit Line</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>X_LCD_D17_UART7_RX</p></td>
+<td><p>UART7 Receive Line</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 21: Pin Assignment of D30 & D31
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Optical UART offers galvanic isolation, making it ideal for use in electrically noisy or high-voltage environments.</p>
+</div>
+</section>
+<section id="spi-lcd-header-p10">
+<h2>SPI-LCD Header (P10)<a class="headerlink" href="#spi-lcd-header-p10" title="Link to this heading"></a></h2>
+<p>A <strong>SPI-LCD header</strong> allows to connect an LCD (Liquid Crystal Display) using the
+<strong>Serial Peripheral Interface (SPI)</strong> communication protocol. SPI is a common
+interface used to communicate with peripherals like displays, sensors, and other
+devices.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Incorrect wiring of SPI pins (MOSI, MISO, CLK, CS) may result in non-functional display or permanent damage to the LCD module.</p>
+</div>
+<br><figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="_images/spilcd.jpeg"><img alt="SPI-LCD Header (P10)" src="_images/spilcd.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 22: SPI-LCD Header (P10)</strong></span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 40.0%" />
+<col style="width: 10.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X_ECSPI1_SS0</p></td>
+<td><p>6</p></td>
+<td><p>X_GPIO_DC</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>VCC5V_IN_SW</p></td>
+<td><p>7</p></td>
+<td><p>X_ECSPI1_SCLK</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>X_RESET#</p></td>
+<td><p>8</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>VCC5V_IN_SW</p></td>
+<td><p>9</p></td>
+<td><p>X_ECSPI1_MISO</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>X_ECSPI1_MOSI</p></td>
+<td><p>10</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 22: Pin Assignment of P10
+</div><br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SPI-LCD header provides a compact and efficient connection method for graphic or character-based LCDs compatible with SPI.</p>
+</div>
+</section>
+<section id="tamper-pins-tp48-tp49">
+<h2>Tamper Pins (TP48, TP49)<a class="headerlink" href="#tamper-pins-tp48-tp49" title="Link to this heading"></a></h2>
+<p><strong>Tamper pins</strong> are security-oriented hardware features designed to detect
+unauthorized physical access or tampering with the device.They are used to
+monitor the integrity of the device and respond to any physical breaches or
+tampering attempts and <strong>X_GPIO5_1, X_GPIO5_2</strong> pins are used.</p>
+<figure class="align-center" id="id21">
+<a class="reference internal image-reference" href="_images/tamper.jpeg"><img alt="Tamper pins" src="_images/tamper.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 23: Tamper Pins</strong></span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tamper detection is especially useful in security-critical applications such as financial terminals, industrial control systems, and IoT gateways.</p>
+</div>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X_GPIO5_1</p></td>
+<td><p>GPIO used for tamper detection, triggered by TP48.</p></td>
+</tr>
+<tr class="row-odd"><td><p>X_GPIO5_2</p></td>
+<td><p>GPIO used for tamper detection, triggered by TP49.</p></td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: -15px; text-align: center; font-style: italic; font-weight: bold;">
+  Table 23: Pin Assignment of TP48 & TP49
+</div><br><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Configure tamper pins in software to trigger alerts, log events, or disable sensitive operations upon detection of tampering.</p>
+</div>
+</section>
+<section id="digital-input-hdr-p5">
+<h2>Digital Input HDR (P5)<a class="headerlink" href="#digital-input-hdr-p5" title="Link to this heading"></a></h2>
+<p>A <strong>digital input header</strong> is a physical interface (set of pins) that allows to receive
+<strong>digital signals</strong> from external devices or sensors. These pins are used to detect
+binary states, which are usually either <strong>high (1)</strong> or <strong>low (0)</strong>, representing the
+presence or absence of a voltage signal.
+Note: Default State of Digital Input (Low) and Defined as Input Port When
+Isolated Voltage connected upto 24V from external; MCU reads High (3.3V).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Exceeding the 24V input limit may permanently damage the digital input circuitry. Always verify the voltage levels before connection.</p>
+</div>
+<br><figure class="align-center" id="id22">
+<a class="reference internal image-reference" href="_images/hdr.jpeg"><img alt="Digital Input HDR" src="_images/hdr.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 24: Digital Input HDR (P5)</strong></span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>DIN(0–24V)_01 (VCC_3V3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>DIN(0–24V)_02 (VCC_3V3)</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>DIN(0–24V)_03 (VCC_3V3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>DIN(0–24V)_04 (VCC_3V3)</p></td>
+</tr>
+<tr class="row-even"><td><p>5, 6</p></td>
+<td><p>DGND_ISO_IN (X_GPIO5_5, X_GPIO2_IO13, X_GPIO1_01)</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 24: Pin Assignment of P5
+</div></section>
+<section id="micro-sd-card-j2">
+<h2>Micro SD Card (J2)<a class="headerlink" href="#micro-sd-card-j2" title="Link to this heading"></a></h2>
+<p>The RB-DCU i.MX 6ULL-1P1 provides a standard micro SDHC card slot at <strong>J2</strong> for
+connection to MMC/SD interface cards. It allows easy and convenient
+connection to peripheral devices such as SD and MMC cards. Power to the SD
+interface is supplied by inserting the appropriate card into the MMC/SD
+connector, which features card detection, a lock mechanism, and a smooth
+extraction function via Push-in/Push-out of the card.</p>
+<p>Insertable jumper <strong>J9</strong> allows toggling between eMMC boot and boot from the
+SD card. To boot from the SD card, <strong>J9</strong> must be set to change the boot
+configuration (Boot Mode Jumper J9).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not insert or remove the SD card while the system is powered on, as it may corrupt data or damage the card.</p>
+</div>
+<br><figure class="align-center" id="id23">
+<a class="reference internal image-reference" href="_images/sdcard.jpeg"><img alt="Micro SD Card Interface" src="_images/sdcard.jpeg" style="width: 250px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 25: Micro SD Card Interface at Connector (J2)</strong></span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The microSD card interface supports SDHC cards up to 32 GB. Use cards that are formatted as FAT32 for best compatibility.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X_SD1_D2</p></td>
+<td><p>10</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>X_SD1_D3</p></td>
+<td><p>11</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>X_SD1_CMD</p></td>
+<td><p>12</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>VCC_3V3</p></td>
+<td><p>13</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>X_SD1_CLK</p></td>
+<td><p>14</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>GND</p></td>
+<td><p>15</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>X_SD1_D0</p></td>
+<td><p>16</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>X_SD1_D1</p></td>
+<td><p>17</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>X_UART1_RTS_B_SD_CD</p></td>
+<td><p>18</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 25: Pin Assignment of J2
+</div><br><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To boot from the SD card, make sure the J9 jumper is configured for SD boot <strong>before powering on</strong> the board.</p>
+</div>
+</section>
+<section id="bluetooth-u14">
+<h2>Bluetooth (U14)<a class="headerlink" href="#bluetooth-u14" title="Link to this heading"></a></h2>
+<p>Bluetooth functionality enables wireless communication with other Bluetooth
+devices, such as smartphones, computers, sensors, and other peripherals.It
+uses <strong>UART5 interface</strong>.</p>
+<figure class="align-center" id="id24">
+<a class="reference internal image-reference" href="_images/bluetooth.jpeg"><img alt="Bluetooth Module" src="_images/bluetooth.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 26: Bluetooth (U14)</strong></span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+<col style="width: 8.3%" />
+<col style="width: 41.7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>GND</p></td>
+<td><p>17</p></td>
+<td><p>X_UART5_RTS_B</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Not used</p></td>
+<td><p>18</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Not used</p></td>
+<td><p>19</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Not used</p></td>
+<td><p>20</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Not used</p></td>
+<td><p>21</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Not used</p></td>
+<td><p>22</p></td>
+<td><p>X_LCD_VSYNC_WATCH_DOG</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Not used</p></td>
+<td><p>23</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>SWCLK</p></td>
+<td><p>24</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>SWDIO</p></td>
+<td><p>25</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>SWO</p></td>
+<td><p>26</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>Not used</p></td>
+<td><p>27</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>GND</p></td>
+<td><p>28</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>VCC_3V3_BLE</p></td>
+<td><p>29</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>X_UART5_RX (TP52)</p></td>
+<td><p>30</p></td>
+<td><p>X_GPIO_BLE_RST</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>X_UART5_TX (TP53)</p></td>
+<td><p>31</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>X_UART5_CTS_B</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 26: Pin Assignment of U14
+</div><br><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Ideal for short-range, low-power wireless communication in embedded IoT
+systems. Can be used for serial console, wireless sensor data, or configuration
+without cables.</p>
+</div>
+</section>
+<section id="accelerometer-gyroscope-3-axis-embedded-temperature-sensor-u23">
+<h2>Accelerometer, Gyroscope - 3 Axis (Embedded Temperature Sensor) (U23)<a class="headerlink" href="#accelerometer-gyroscope-3-axis-embedded-temperature-sensor-u23" title="Link to this heading"></a></h2>
+<p>An <strong>Accelerometer</strong> and a <strong>Gyroscope</strong> with an embedded temperature sensor,
+typically in a 3-axis configuration, are common sensors used for motion
+sensing, orientation tracking, and environmental monitoring. It is using <strong>I2C1
+interface</strong>.</p>
+<figure class="align-center" id="id25">
+<a class="reference internal image-reference" href="_images/acc.jpeg"><img alt="Accelerometer, Gyroscope, Temp Sensor" src="_images/acc.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 27: Accelerometer, Gyroscope - 3 Axis (Embedded Temperature sensor) (U23)</strong></span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This sensor module communicates via the I2C1 bus. Ensure proper pull-up
+resistors on SDA and SCL lines if not already present on the board.</p>
+</div>
+<br><table class="docutils align-default">
+<colgroup>
+<col style="width: 7.1%" />
+<col style="width: 42.9%" />
+<col style="width: 7.1%" />
+<col style="width: 42.9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+<th class="head"><p>Pin</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>VCC_3V3_SEN</p></td>
+<td><p>8</p></td>
+<td><p>VCC_3V3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>VCC_3V3</p></td>
+<td><p>9</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>VCC_3V3</p></td>
+<td><p>10</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>X_CSI_FIELD_GPIO_3V3</p></td>
+<td><p>11</p></td>
+<td><p>Not used</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>VCC_3V3</p></td>
+<td><p>12</p></td>
+<td><p>VCC_3V3_SEN</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>GND</p></td>
+<td><p>13</p></td>
+<td><p>X_I2C1_SCL (TP47)</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>GND</p></td>
+<td><p>14</p></td>
+<td><p>X_I2C1_SDA (TP46)</p></td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+  Table 27: Pin Assignment of U23
+</div><br><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The combined use of accelerometer and gyroscope enables precise motion
+tracking, ideal for gesture detection, tilt sensing, and inertial navigation in
+embedded applications.</p>
+</div>
+<hr style="border: 0; border-top: 3px solid #ccc; margin: 20px 0;"></section>
+</section>
+<section id="sd-card-setup-guide">
+<h1>SD Card Setup Guide<a class="headerlink" href="#sd-card-setup-guide" title="Link to this heading"></a></h1>
+<section id="sd-card-partition-setup">
+<h2>SD Card Partition Setup<a class="headerlink" href="#sd-card-partition-setup" title="Link to this heading"></a></h2>
+<p><strong>Step 1:</strong> Insert the SD card into your PC. Then open the application named <strong>GParted Partition Editor</strong>. It will prompt you for a password. After entering the password, GParted will open.</p>
+<figure class="align-center" id="id26">
+<a class="reference internal image-reference" href="_images/opened_gparted.jpeg"><img alt="GParted main window after launch" src="_images/opened_gparted.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 28: GParted application opened successfully</strong></span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful when using GParted — your PC’s SSD/HDD and the SD card partitions are all shown. Mistakes can lead to data loss!</p>
+</div>
+<p>—</p>
+<p><strong>Step 2:</strong> Select your SD card device in the dropdown at the top-right corner.</p>
+<figure class="align-center" id="id27">
+<a class="reference internal image-reference" href="_images/image.jpeg"><img alt="Selecting SD card device in GParted" src="_images/image.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 29: Selecting the SD card device from GParted’s device list</strong></span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>Step 3:</strong> Unmount all partitions on the SD card using right-click, then delete all partitions.</p>
+<figure class="align-center" id="id28">
+<a class="reference internal image-reference" href="_images/unmount.jpeg"><img alt="Right-click unmount partitions in GParted" src="_images/unmount.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 30: Unmounting all partitions on the SD card</strong></span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><figure class="align-center" id="id29">
+<a class="reference internal image-reference" href="_images/dd.png"><img alt="Deleting partitions using GParted" src="_images/dd.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 31: Deleting all partitions from the SD card</strong></span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><figure class="align-center" id="id30">
+<a class="reference internal image-reference" href="_images/unmounted.jpeg"><img alt="Final unallocated state of SD card" src="_images/unmounted.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 32: Final view showing SD card with all partitions deleted</strong></span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>Step 4:</strong> Right-click on the unallocated partition and select the <strong>New</strong> option. A window titled <em>Create New Partition</em> will appear.</p>
+<figure class="align-center" id="id31">
+<a class="reference internal image-reference" href="_images/new.jpeg"><img alt="Create new partition window in GParted" src="_images/new.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 33:Creating a new partition in GParted</strong></span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>Step 5:</strong> For the <strong>boot</strong> partition:
+- Set “Free space preceding” to <strong>8</strong>
+- Set “New size” to <strong>2048</strong>
+- Select <strong>fat32</strong> as the file system
+- Set label as <strong>boot</strong>
+- Click <strong>Add</strong></p>
+<figure class="align-center" id="id32">
+<a class="reference internal image-reference" href="_images/boot.jpeg"><img alt="Configuring boot partition parameters in GParted" src="_images/boot.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 34:Configuring parameters for the boot partition</strong></span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>Step 6:</strong> To create the <strong>rootfs</strong> partition:
+- Right-click the remaining <strong>unallocated</strong> space
+- Choose <strong>New</strong>
+- Set “New size” to <strong>1024</strong> or use the remaining space
+- Select <strong>ext3</strong> as the file system
+- Label it as <strong>rootfs</strong>
+- Click <strong>Add</strong></p>
+<figure class="align-center" id="id33">
+<a class="reference internal image-reference" href="_images/root.jpeg"><img alt="Setting up rootfs partition in GParted" src="_images/root.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 35:Setting up the rootfs partition</strong></span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>Step 7:</strong> Click the <strong>✔️ Apply</strong> button on the toolbar. It will apply all pending operations and may take a few seconds. Close the window after completion.</p>
+<figure class="align-center" id="id34">
+<a class="reference internal image-reference" href="_images/clicks.jpeg"><img alt="Apply pending operations in GParted" src="_images/clicks.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 36:Applying all pending partition changes</strong></span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>Step 8:</strong> Right-click the <strong>boot</strong> partition and choose <strong>Manage Flags</strong>. In the popup, enable the <strong>boot</strong> flag and then close the dialog.</p>
+<figure class="align-center" id="id35">
+<a class="reference internal image-reference" href="_images/flag.jpeg"><img alt="Setting the boot flag on boot partition in GParted" src="_images/flag.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 37: Enabling the boot flag for the boot partition</strong></span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>Step 9:</strong> Now your SD card is ready to copy the <strong>boot</strong> and <strong>rootfs</strong> files for the <strong>RB-DCU i.MX 6ULL</strong> board.</p>
+<hr style="border: 0; border-top: 3px solid #ccc; margin: 20px 0;"></section>
+<section id="copying-files-images-to-sd-card">
+<h2>Copying Files(images) to SD Card<a class="headerlink" href="#copying-files-images-to-sd-card" title="Link to this heading"></a></h2>
+<p><strong>Step 1:</strong> Flashing barebox.bin into SD-card 8 MB raw space.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>&lt;path<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>barebox<span class="w"> </span>image&gt;<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/sd&lt;a/b/c/d&gt;<span class="w"> </span><span class="nv">bs</span><span class="o">=</span><span class="m">512</span><span class="w"> </span><span class="nv">skip</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">seek</span><span class="o">=</span><span class="m">2</span>
+<span class="gp">$ </span>sync
+</pre></div>
+</div>
+<p><strong>Step 2:</strong> Copy the kernel image(zImage), oftree image(.dtb) into the boot partition of the sdcard. Below are the command to copy into sd card.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cp<span class="w"> </span>zImage<span class="w"> </span>/media/&lt;username&gt;/BOOT
+<span class="gp">$ </span>cp<span class="w"> </span>oftree<span class="w"> </span>/media/&lt;username&gt;/BOOT
+</pre></div>
+</div>
+<p><strong>Step 3:</strong> And root file system tar file should be extract to the rootfs partition of the sdcard using the below commands.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>&lt;path<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>rootfs<span class="w"> </span>tar<span class="w"> </span>file&gt;<span class="w"> </span>-C<span class="w"> </span>&lt;path<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>sdcard<span class="w"> </span>rootfs<span class="w"> </span>partition&gt;
+<span class="gp">$ </span>sync
+</pre></div>
+</div>
+<p>TARGET :
+Now insert the sdcard into the board and make the jumper positions for booting from sdcard.</p>
+<br><hr style="border: 0; border-top: 3px solid #ccc; margin: 20px 0;"></section>
+</section>
+<section id="how-to-handle-the-board">
+<h1>How to Handle the Board<a class="headerlink" href="#how-to-handle-the-board" title="Link to this heading"></a></h1>
+<p><strong>Before touching the board:</strong></p>
+<ul class="simple">
+<li><p>Work on a clean, non‑static surface (anti‑static mat if available).</p></li>
+<li><p>Wear an anti‑static wrist strap grounded to earth.</p></li>
+<li><p>Hold the board by its edges—avoid contact with chips or connectors.</p></li>
+<li><p>Avoid touching exposed metal parts or pins.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Always discharge any static build‑up before touching the board.</p>
+</div>
+<p><strong>Prepare Your Workspace:</strong></p>
+<ul class="simple">
+<li><p>Gather all needed items:</p></li>
+<li><p>RB-DCU i.MX 6ULL board</p></li>
+<li><p>SD card with boot image.</p></li>
+<li><p>Power adapter (5V).</p></li>
+<li><p>USB‑to‑TTL debugger cable</p></li>
+<li><p>Host PC (Linux recommended) with <strong>minicom</strong> or similar terminal software installed.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Work in a clean, dry, low‑humidity area to minimize static buildup.</p></li>
+<li><p>Keep food and liquids away from electronic components.</p></li>
+</ul>
+</div>
+<p><strong>Insert the SD Card:</strong></p>
+<ul class="simple">
+<li><p>Ensure the SD card is formatted correctly (e.g., FAT32 for boot images).</p></li>
+<li><p>Find the card slot on the board and insert.</p></li>
+<li><p>Align contacts, then gently push until you hear or feel a click.</p></li>
+<li><p>If it resists, pull out, realign, and try again—never force it.</p></li>
+</ul>
+<p><strong>Connect the Power Adapter:</strong></p>
+<ul class="simple">
+<li><p>Ensure the SD card is inserted but do not power on the board switch yet.</p></li>
+<li><p>Plug the adapter into a grounded wall outlet.</p></li>
+<li><p>Attach the barrel connector to the board’s power input jack.</p></li>
+</ul>
+<p><strong>Connect the USB‑to‑TTL Debugger Cable:</strong></p>
+<ul class="simple">
+<li><p>Locate the board’s debug port (USB‑to‑TTL header or micro‑USB).</p></li>
+<li><p>Insert the TTL end into the board’s debug header pins. Plug the USB end into your host PC.</p></li>
+</ul>
+<p>On Linux, verify with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>lsusb
+</pre></div>
+</div>
+<p><strong>Power On the Board:</strong></p>
+<ul class="simple">
+<li><p>Confirm both the adapter and USB‑to‑TTL cable are connected.</p></li>
+<li><p>Turn the board’s power switch to ON.</p></li>
+<li><p>LEDs should light up, and the boot process begins.</p></li>
+</ul>
+<hr style="border: 0; border-top: 3px solid #ccc; margin: 20px 0;"></section>
+<section id="how-to-connect-the-board-with-a-pc">
+<h1>How to Connect the Board with a PC<a class="headerlink" href="#how-to-connect-the-board-with-a-pc" title="Link to this heading"></a></h1>
+<section id="connect-to-the-board-via-serial-console-minicom">
+<h2>Connect to the Board via Serial Console (Minicom)<a class="headerlink" href="#connect-to-the-board-via-serial-console-minicom" title="Link to this heading"></a></h2>
+<p>Install Minicom (if it is not already installed):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>minicom
+</pre></div>
+</div>
+<p>Identify the serial port after connecting the USB-to-TTL cable:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>dmesg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>tty
+</pre></div>
+</div>
+<p>Look for a newly listed device such as <cite>/dev/ttyUSB0</cite> or <cite>/dev/ttyACM0</cite>.</p>
+<p><strong>Start Minicom with the correct port and baud rate (115200):</strong></p>
+<p><strong>1.</strong> In your host machine terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>minicom<span class="w"> </span>-s
+</pre></div>
+</div>
+<br><p><strong>2.</strong> Choose <strong>“Serial port setup”</strong> and configure the following:</p>
+<figure class="align-center" id="id36">
+<a class="reference internal image-reference" href="_images/open_minicom.jpeg"><img alt="Minicom startup interface for configuration" src="_images/open_minicom.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 38: Minicom startup screen where the serial configuration menu is accessed</strong></span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>3.</strong> Set the serial device to your USB-to-TTL port (e.g., <cite>/dev/ttyUSB0</cite>).</p>
+<p><strong>4.</strong> Set the baud rate to <strong>115200</strong>.</p>
+<p><strong>5.</strong> Disable <strong>hardware flow control</strong> (set to “No”).</p>
+<figure class="align-center" id="id37">
+<a class="reference internal image-reference" href="_images/change.jpeg"><img alt="Configuring serial port and baud rate in Minicom" src="_images/change.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 39: Minicom serial settings menu where device, baud rate, and flow control options are configured</strong></span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>6.</strong> Save the setup as the <strong>default configuration</strong>.</p>
+<figure class="align-center" id="id38">
+<a class="reference internal image-reference" href="_images/save.jpeg"><img alt="Saving default Minicom configuration" src="_images/save.jpeg" style="width: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 40: Saving the modified serial settings as the default configuration in Minicom</strong></span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>7.</strong> Exit the setup menu to start the Minicom serial console.</p>
+<p><strong>Shutting Down the Board:</strong></p>
+<p>To safely power off the target board, run the following command in the target terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poweroff
+</pre></div>
+</div>
+<hr style="border: 0; border-top: 3px solid #ccc; margin: 20px 0;"></section>
+<section id="connect-to-the-board-via-ssh-network-access">
+<h2>Connect to the Board via SSH (Network Access)<a class="headerlink" href="#connect-to-the-board-via-ssh-network-access" title="Link to this heading"></a></h2>
+<p>You can also connect to the board over the network using SSH. Follow the steps below:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before using SSH, ensure <strong>both your PC and the embedded board are on the same network</strong>—whether via the same Wi-Fi router, LAN switch, or direct Ethernet connection with static IPs.</p>
+<p>SSH requires proper IP connectivity. If the devices are not on the same subnet or not routable, <strong>SSH will fail</strong>. Always verify connectivity using <cite>ping</cite> or by checking IP addresses.</p>
+</div>
+<p><strong>Step 1: Check the IP Address of the Host PC</strong></p>
+<p>Use the following command to check your PC’s IP address:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ip<span class="w"> </span>a
+</pre></div>
+</div>
+<p>If no IP is assigned, configure a static IP using:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.2.1/24<span class="w"> </span>dev<span class="w"> </span>&lt;network_interface_name&gt;
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.2.1/24<span class="w"> </span>dev<span class="w"> </span>enp0s31f6
+</pre></div>
+</div>
+<figure class="align-center" id="id39">
+<a class="reference internal image-reference" href="_images/add_ip.jpeg"><img alt="Assigning static IP to host interface" src="_images/add_ip.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 41: Manually assigning a static IP address to the host machine’s Ethernet interface</strong></span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><p><strong>Step 2: Configure the IP Address on the Target Board</strong></p>
+<p>On the target board, verify its IP address:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ip<span class="w"> </span>a
+</pre></div>
+</div>
+<p>If none is assigned, manually configure one:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ifconfig<span class="w"> </span>eth0<span class="w"> </span><span class="m">192</span>.168.11.10<span class="w"> </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span>up
+<span class="gp">$ </span>route<span class="w"> </span>add<span class="w"> </span>default<span class="w"> </span>gw<span class="w"> </span><span class="m">192</span>.168.11.1
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make a note of both the assigned IP address and the hostname of the target board for later use.</p>
+</div>
+<p><strong>Step 3: Install and Enable SSH on the Host PC</strong></p>
+<p>Ensure SSH is installed and running:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ssh
+<span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
+<span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
+</pre></div>
+</div>
+<p><strong>Step 4: Connect to the Target Board via SSH</strong></p>
+<p>Once everything is set, connect to the target board using:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>ssh<span class="w"> </span>&lt;target_board_name&gt;@&lt;target_board_ip&gt;
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>ssh<span class="w"> </span>root@192.168.11.110
+</pre></div>
+</div>
+<figure class="align-center" id="id40">
+<a class="reference internal image-reference" href="_images/connect_ip.jpeg"><img alt="SSH connection to the target board" src="_images/connect_ip.jpeg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 42: Successful SSH session established from the host to the embedded target board</strong></span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<br><hr style="border: 0; border-top: 3px solid #ccc; margin: 20px 0;"></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="RB-DCU i.MX 6ULL QUICK START GUIDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, PHYTEC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

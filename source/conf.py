@@ -19,7 +19,7 @@ html_js_files = [
     'sidebar-toggle.js',
 ]
 
-html_logo = '_static/logo.png'
+html_logo = '_static/logo.svg'
 
 html_theme_options = {
     'collapse_navigation': True,
