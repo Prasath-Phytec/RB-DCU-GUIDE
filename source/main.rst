@@ -133,15 +133,15 @@ DC 5V.
    <br>
 
 
-+---------------+--------------------+------------------------+
-| Pin           | Signal             | Description            |
-+===============+====================+========================+
-| 1             | VCC5V_MAIN         | +5V power supply       |
-+---------------+--------------------+------------------------+
-| 2             | GND                | GND                    |
-+---------------+--------------------+------------------------+
-| 3             | SHILD              | Shield                 |
-+---------------+--------------------+------------------------+
++-------------------+--------------------+---------------+--------------+----------------------+
+| Connector Pin No  | SOM Signal         | Signal Level  | Signal Type  | Description          |
++===================+====================+===============+==============+======================+
+| 1                 | VCC5V_MAIN         | 5V            | PWR          | +5V power supply     |
++-------------------+--------------------+---------------+--------------+----------------------+
+| 2                 | GND                | N/A           | N/A          | Ground               |
++-------------------+--------------------+---------------+--------------+----------------------+
+| 3                 | SHIELD             | N/A           | N/A          | Shield               |
++-------------------+--------------------+---------------+--------------+----------------------+
 
 .. raw:: html
 
@@ -196,15 +196,15 @@ voltage levels.
 
 
 
-+---------------+--------------------+
-| Pin           | Signal             |
-+===============+====================+
-| 1             | X_UART1_TX_DCE     |
-+---------------+--------------------+
-| 2             | X_UART1_RX_DCE     |       
-+---------------+--------------------+
-| 3             | GND                |
-+---------------+--------------------+
++--------------------+-------------------+----------------------+--------------+--------------+--------------------------------------+
+| Connector Pin No   | Connector Signal  | SOM Signal           | Signal Level | Signal Type  | Description                          |
++====================+===================+======================+==============+==============+======================================+
+| 1                  | TX                | X_UART1_RX_DBG       | 3.3V         | IN           | Debug UART receive (from SOM)        |
++--------------------+-------------------+----------------------+--------------+--------------+--------------------------------------+
+| 2                  | RX                | X_UART1_TX_DBG       | 3.3V         | OUT          | Debug UART transmit (from SOM)       |
++--------------------+-------------------+----------------------+--------------+--------------+--------------------------------------+
+| 3                  | GND               | GND                  | NA           | NA           | Ground reference                     |
++--------------------+-------------------+----------------------+--------------+--------------+--------------------------------------+
 
 .. raw:: html
 
@@ -285,11 +285,11 @@ the module to also reset the peripherals on the carrier board.
    <br>
 
 .. csv-table::
-   :header: "Pin", "Description"
-   :widths: 20, 80
+   :header: "Connector Pin No","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 15, 25, 15, 15, 30
 
-   "X_nRESET_IN", "Active-low input reset signal to the processor module, triggered by SW2."
-   "X_nRESET_OUT (X_RESET#)", "Active-low output reset signal from the module to reset peripherals on the carrier board."
+   "1","X_nRESET_IN","3.3V","IN","System reset input (active low)"
+   "2","GND","N/A","N/A","Ground reference"
 
 
 .. raw:: html
@@ -329,15 +329,15 @@ External Li-ion battery (3.7V) is used to boot the board.
 
    <br>
 
-+---------------+--------------------+
-| Pin           | Signal             |
-+===============+====================+
-| 1             | VBAT_OUT(BAT_TS)   |
-+---------------+--------------------+
-| 2             | BAT_TS             |
-+---------------+--------------------+
-| 3             | GND                |
-+---------------+--------------------+
++--------------------+-------------------+----------------------+--------------+--------------+----------------------------------------------+
+| Connector Pin No   | Connector Signal  | SOM Signal           | Signal Level | Signal Type  | Description                                  |
++====================+===================+======================+==============+==============+==============================================+
+| 1                  | VBAT+             | VBAT_OUT             | 3.7–4.2V     | PWR          | Battery positive terminal                    |
++--------------------+-------------------+----------------------+--------------+--------------+----------------------------------------------+
+| 2                  | BAT_TS            | BAT_TS               | 3.3V         | IN           | Battery temperature sense (to ADC)           |
++--------------------+-------------------+----------------------+--------------+--------------+----------------------------------------------+
+| 3                  | GND               | GND                  | NA           | NA           | Ground reference                             |
++--------------------+-------------------+----------------------+--------------+--------------+----------------------------------------------+
 
 .. raw:: html
 
@@ -375,13 +375,13 @@ date. Internal RTC is not mounted in board.
    <br>
 
 
-+---------------+--------------------+------------------------+
-| Pin           | Signal             | Description            |
-+===============+====================+========================+
-| 1             | GND                | Ground                 |
-+---------------+--------------------+------------------------+
-| 2             | VCC_3V3            | Backup battery voltage |
-+---------------+--------------------+------------------------+
++-------------------+----------------+---------------+--------------+--------------------------------------+
+| Connector Pin No  | SOM Signal     | Signal Level  | Signal Type  | Description                          |
++===================+================+===============+==============+======================================+
+| 1                 | GND            | N/A           | N/A          | Ground reference                     |
++-------------------+----------------+---------------+--------------+--------------------------------------+
+| 2                 | VCC_3V3        | 3.0–3.3V      | PWR          | RTC backup battery input             |
++-------------------+----------------+---------------+--------------+--------------------------------------+
 
 .. raw:: html
 
@@ -394,15 +394,15 @@ date. Internal RTC is not mounted in board.
    <br><br>
 
 
-+---------------+--------------------+------------------------+
-| Pin           | Signal             | Description            |
-+===============+====================+========================+
-| 1             | INT_RTC            | Internel RTC           |
-+---------------+--------------------+------------------------+
-| 2             | RTC_BACKUP         | RTC backup             |
-+---------------+--------------------+------------------------+
-| 3             | EXT_RTC            | External RTC           |
-+---------------+--------------------+------------------------+
++-------------------+----------------+---------------+--------------+--------------------------------------+
+| Connector Pin No  | SOM Signal     | Signal Level  | Signal Type  | Description                          |
++===================+================+===============+==============+======================================+
+| 1                 | INT_RTC        | 3.3V          | PWR          | Internal RTC supply                  |
++-------------------+----------------+---------------+--------------+--------------------------------------+
+| 2                 | RTC_BACKUP     | 3.0–3.3V      | PWR          | RTC supply node                      |
++-------------------+----------------+---------------+--------------+--------------------------------------+
+| 3                 | EXT_RTC        | 3.0–3.3V      | PWR          | External battery input (P11)         |
++-------------------+----------------+---------------+--------------+--------------------------------------+
 
 .. raw:: html
 
@@ -429,11 +429,12 @@ RB-DCU i.MX 6ULL-1P1 (top) shows the location of the LED.
 
    <br><br>
 
-+---------+-------------+---------------+-------------------------------+
-| LED     | Colour      | Description   | Section                       |
-+=========+=============+===============+===============================+
-| D4      | Green       | User LED1     | User GPIO Config_RGB LED(D4)  |
-+---------+-------------+---------------+-------------------------------+
++------+--------+-------------------------------+---------------+--------------+--------------------------------------+
+| LED  | Colour | SOM Signal                    | Signal Level  | Signal Type  | Description                          |
++======+========+===============================+===============+==============+======================================+
+| D4   | Green  | X_GPIO2_IO11_USER_LED         | 3.3V          | OUT          | User LED (active low control)        |
++------+--------+-------------------------------+---------------+--------------+--------------------------------------+
+
 
 .. raw:: html
 
@@ -457,11 +458,11 @@ INPUT operation of the board.**X_GPIO2_IO8_INT_SW** is used for switch.
    **Figure 12: Switch1 (SW1)**
 
 
-.. csv-table:: 
-   :header: "Pin", "Description"
-   :widths: 20, 80
+.. csv-table::
+   :header: "SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 30, 15, 15, 40
 
-   "X_GPIO2_IO8_INT_SW", "GPIO signal connected to SW1. Used to detect switch press in the software layer."
+   "X_GPIO2_IO8_INT_SW","3.3V","IN","User switch input (active low)"
 
 .. raw:: html
 
@@ -498,37 +499,21 @@ available at expansion connector J4.
    <br>
 
 .. csv-table::
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 8,30,8,30
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 20, 30, 12, 12, 30
 
-   1, VCC_3V3_GSM, 29, GND
-   2, VCC_3V3_GSM, 30, Not used
-   3, Not used,     31, GND
-   4, GND,          32, Not used
-   5, Not used,     33, Not used
-   6, Not used,     34, GND
-   7, eSIM_RST,     35, GND
-   8, SIM_VCC,      36, X_USB_OTG_N
-   9, GND,          37, GND
-   10, SIM_IO,      38, X_USB_OTG_P
-   11, Not used,    39, VCC_3V3_GSM
-   12, SIM_CLK,     40, GND
-   13, SIM_eSIM_VDD,41, VCC_3V3_GSM
-   14, SIM_RST,     42, WLAN_EN_LED
-   15, GND,         43, GND
-   16, SIM_VPP,     44, Not used
-   17, eSIM_CLK,    45, Not used
-   18, GND,         46, Not used
-   19, eSIM_DATA,   47, Not used
-   20, VCC_3V3_GSM, 48, Not used
-   21, GND,         49, Not used
-   22, X_RESET#,    50, GND
-   23, Not used,    51, Not used
-   24, VCC_3V3_GSM, 52, VCC_3V3_GSM
-   25, Not used,    S1, GND
-   26, GND,         S2, GND
-   27, GND,         M1, Not used
-   28, Not used,    M2, Not used
+   "2","+3.3V","VCC_3V3_GSM","3.3V","PWR","Mini PCIe power supply"
+   "4","GND","GND","NA","NA","Ground reference"
+   "6","SIM_VCC","SIM_VCC","1.8/3.0V","PWR","SIM card power"
+   "8","SIM_RST","SIM_RST","1.8/3.0V","OUT","SIM reset"
+   "10","SIM_CLK","SIM_CLK","1.8/3.0V","OUT","SIM clock"
+   "12","SIM_IO","SIM_IO","1.8/3.0V","I/O","SIM data"
+   "20","USB_D+","X_USB_OTG_P","3.3V","I/O","USB data positive"
+   "22","USB_D-","X_USB_OTG_N","3.3V","I/O","USB data negative"
+   "24","PERST#","X_GPIO1_4_mPCIe_RST","3.3V","OUT","PCIe reset (active low)"
+   "42","LED_WWAN#","WLAN_EN_LED","3.3V","OUT","WWAN status LED"
+   "44","LED_WLAN#","WLAN_EN_LED","3.3V","OUT","WLAN status LED"
+   "52","+3.3V","VCC_3V3_GSM","3.3V","PWR","Mini PCIe power supply"
 
 
 .. raw:: html
@@ -563,16 +548,22 @@ card.
 
 
 
-.. csv-table:: 
-   :header: "Left Pin", "Signal", "Right Pin", "Signal"
-   :widths: 8, 25, 8, 25
+.. csv-table::
+   :header: "Connector Pin No","Signal","Signal Level","Signal Type","Description"
+   :widths: 15, 25, 15, 15, 30
 
-   C1, SIM_VCC,      C7, TP32
-   C2, SIM_RST,      S1, GND
-   C3, SIM_CLK,      S2, GND
-   C4, Not used,     S3, GND
-   C5, GND,          S4, GND
-   C6, SIM_VPP,      CD, SIM_VCC
+   "C1","SIM_VCC","1.8/3.0V","PWR","SIM card power supply"
+   "C2","SIM_RST","1.8/3.0V","OUT","SIM reset signal"
+   "C3","SIM_CLK","1.8/3.0V","OUT","SIM clock signal"
+   "C4","Not used","N/A","N/A","Not connected"
+   "C5","GND","N/A","N/A","Ground reference"
+   "C6","SIM_VPP","1.8/3.0V","PWR","SIM programming voltage"
+   "C7","TP32","N/A","TP","Test point connection"
+   "S1","GND","N/A","N/A","Ground"
+   "S2","GND","N/A","N/A","Ground"
+   "S3","GND","N/A","N/A","Ground"
+   "S4","GND","N/A","N/A","Ground"
+   "CD","SIM_VCC","1.8/3.0V","PWR","Card detect / SIM power"
 
 
 .. raw:: html
@@ -623,14 +614,14 @@ embedded systems that rely on cellular connectivity.eSIM is not mounted.
    <br>
 
 .. csv-table::
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 5, 25, 5, 25
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 22, 30, 12, 12, 30
 
-   1, GND,            6, eSIM_CLK
-   2, SIM_eSIM_VDD,   7, eSIM_RST
-   3, eSIM_DATA,      8, SIM_eSIM_VDD
-   4, Not used,       9, Not used
-   5, Not used,       ,
+   "1","VCC","SIM_eSIM_VDD","1.8/3.0V","PWR","eSIM power supply"
+   "2","RST","eSIM_RST","1.8/3.0V","OUT","eSIM reset signal"
+   "3","CLK","eSIM_CLK","1.8/3.0V","OUT","eSIM clock signal"
+   "5","DATA","eSIM_DATA","1.8/3.0V","I/O","eSIM data line"
+   "6","GND","GND","NA","NA","Ground reference"
 
 
 .. raw:: html
@@ -666,29 +657,26 @@ operation as a station and a micro access point for up to 8 clients.
 
 
 
-.. csv-table:: 
-   :header: Pin, Signal, Pin, Signal
-   :widths: 6,40,6,40
+.. csv-table::
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 22, 30, 12, 12, 30
 
-   1, Not used,              20, Not used
-   2, Not used,              21, GND
-   3, Not used,              22, VCC_1V8
-   4, VCC_3V3_WIFI_MOD,      23, X_USB_OTG2_D_P
-   5, Not used,              24, X_USB_OTG2_D_N
-   6, GND,                   25, GND
-   7, Not used,              26, GND
-   8, TP36,                  27, GND
-   9, TP36,                  28, GND
-   10, GND,                  29, GND
-   11, GND,                  30, GND
-   12, UFL Coax (J5),        31, GND
-   13, GND,                  32, GND
-   14, WIFI_PDn,             33, GND
-   15, Not used,             34, GND
-   16, Not used,             35, GND
-   17, WAKE_UP_1V8_IO,       36, GND
-   18, Not used,             37, GND
-   19, X_HOST_WAKE_UP_3V3IO, ,
+   "1","SDIO_D1","SDIO_D1","3.3V","I/O","SDIO data line 1"
+   "2","SDIO_D0","SDIO_D0","3.3V","I/O","SDIO data line 0"
+   "3","SDIO_CLK","SDIO_CLK","3.3V","OUT","SDIO clock"
+   "4","SDIO_CMD","SDIO_CMD","3.3V","I/O","SDIO command"
+   "8","VCC","VCC_3V3_WIFI_MOD","3.3V","PWR","WiFi module power"
+   "9","VCC","VCC_3V3_WIFI_MOD","3.3V","PWR","WiFi module power"
+   "10","GND","GND","NA","NA","Ground reference"
+   "11","GND","GND","NA","NA","Ground reference"
+   "12","ANT","RF_ANT","RF","RF","Antenna connection (50Ω)"
+   "13","GND","GND","NA","NA","Ground reference"
+   "14","PDn","WIFI_PDn","3.3V","IN","Power down control (active low)"
+   "18","WAKE","X_GPIO_WIFI_WAKE","3.3V","IN","Wake-up signal from host"
+   "19","HOST_WAKE","X_HOST_WAKE_UP_3V3IO","3.3V","OUT","Wake-up signal to host"
+   "21","USB_D+","X_USB_OTG2_P","3.3V","I/O","USB data positive"
+   "22","USB_D-","X_USB_OTG2_N","3.3V","I/O","USB data negative"
+
 
 
 .. raw:: html
@@ -717,6 +705,33 @@ the connector.
 
    **Figure 17: Ethernet Interfaces at Connector (J3)**
 
+.. csv-table::
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 25, 30, 12, 12, 30
+
+   "1","TD+","X_ENET1_TX_P","1.8/2.5V","DIFF","Ethernet transmit positive"
+   "2","TD-","X_ENET1_TX_N","1.8/2.5V","DIFF","Ethernet transmit negative"
+   "3","RD+","X_ENET1_RX_P","1.8/2.5V","DIFF","Ethernet receive positive"
+   "6","RD-","X_ENET1_RX_N","1.8/2.5V","DIFF","Ethernet receive negative"
+   "4","PoE_V+","NC","NA","PWR","PoE positive (not used)"
+   "5","PoE_V+","NC","NA","PWR","PoE positive (not used)"
+   "7","PoE_V-","NC","NA","PWR","PoE negative (not used)"
+   "8","PoE_V-","NC","NA","PWR","PoE negative (not used)"
+   "9","LED1_A","X_ENET1_LED0","3.3V","OUT","Ethernet LED 0 control"
+   "10","LED1_K","GND","NA","NA","LED ground"
+   "11","LED2_A","X_ENET1_LED1","3.3V","OUT","Ethernet LED 1 control"
+   "12","LED2_K","GND","NA","NA","LED ground"
+   "13","SHIELD1","GND","NA","NA","Connector shield"
+   "14","SHIELD2","GND","NA","NA","Connector shield"
+
+.. raw:: html
+
+   <div style="text-align: center; margin-top: -20px; font-style: italic; font-weight: bold;">
+     Table 16: Pin Assignment of J3
+   </div>
+.. raw:: html
+
+   <br>
 
 .. note::
 
@@ -742,15 +757,20 @@ pin mating Male connector(P4).
    <br>
 
 
-.. csv-table:: 
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 5, 25, 5, 25
+.. csv-table::
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 25, 30, 12, 12, 25
 
-   1, GND, 2, DB_RS232_RX_1
-   3, DB_RS232_TX_1, 4, DB_RS485_N
-   5, GND, 6, DB_RS485_P
-   7, DB_RS232_RX_2, 8, DB_RS232_TX_2
-   9, GND, 10, GND
+   "1","GND","GND","N/A","N/A","Ground reference"
+   "2","DB_RS232_RX_1","X_UART2_RX","3.3V","IN","RS232 receive channel 1"
+   "3","DB_RS232_TX_1","X_UART2_TX","3.3V","OUT","RS232 transmit channel 1"
+   "4","DB_RS485_N","X_CSI_PIXCLK_UART6_RX","3.3V","I/O","RS485 differential negative"
+   "5","GND","GND","N/A","N/A","Ground reference"
+   "6","DB_RS485_P","X_CSI_MCLK_UART6_TX","3.3V","I/O","RS485 differential positive"
+   "7","DB_RS232_RX_2","X_UART2_RTS_B","3.3V","IN","RS232 receive channel 2"
+   "8","DB_RS232_TX_2","X_UART2_CTS_B","3.3V","OUT","RS232 transmit channel 2"
+   "9","GND","GND","N/A","N/A","Ground reference"
+   "10","GND","GND","N/A","N/A","Ground reference"
 
 .. raw:: html
 
@@ -800,16 +820,24 @@ technologies.RF connector1 is using **UART4 interface**.
    <br>
 
 .. csv-table::
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 5, 25, 5, 25
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 28, 30, 12, 12, 26
 
-   1, VCC_3V3, 2, GND
-   3, VCC_3V3, 4, GND
-   5, X_UART4_TX, 6, GND
-   7, X_UART4_RX, 8, GND
-   9, X_GPIO2_IO9_RF1_RST , 10, GND
-   11, X_GPIO5_IO9_RF1_1, 12, GND
-   13, X_GPIO2_IO14_RF1_2, 14, GND
+   "1","VCC_3V3","VCC_3V3","3.3V","PWR","3.3V power supply"
+   "2","GND","GND","N/A","N/A","Ground reference"
+   "3","VCC_3V3","VCC_3V3","3.3V","PWR","3.3V power supply"
+   "4","GND","GND","N/A","N/A","Ground reference"
+   "5","RF_UART4_TX","X_UART4_TX","3.3V","OUT","UART4 transmit"
+   "6","GND","GND","N/A","N/A","Ground reference"
+   "7","RF_UART4_RX","X_UART4_RX","3.3V","IN","UART4 receive"
+   "8","GND","GND","N/A","N/A","Ground reference"
+   "9","RF_GPIO2_IO9_RF1_RST","X_GPIO2_IO9","3.3V","OUT","RF module reset"
+   "10","GND","GND","N/A","N/A","Ground reference"
+   "11","RF_GPIO5_IO9_RF1_1","X_GPIO5_IO9","3.3V","I/O","RF control signal 1"
+   "12","GND","GND","N/A","N/A","Ground reference"
+   "13","RF_GPIO2_IO14_RF1_2","X_GPIO2_IO14","3.3V","I/O","RF control signal 2"
+   "14","GND","GND","N/A","N/A","Ground reference"
+
 
 .. raw:: html
 
@@ -849,16 +877,23 @@ technologies.RF connector1 is using **UART3 interface**.
    <br>
 
 .. csv-table::
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 5, 25, 5, 25
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 28, 30, 12, 12, 26
 
-   1, VCC_3V, 2, GND
-   3, VCC_3V, 4, GND
-   5, X_UART3_TX, 6, GND
-   7, X_UART3_RX, 8, GND
-   9, X_GPIO1_IO10_RF2_RST , 10, GND
-   11, X_GPIO2_IO15_RF2_1, 12, GND
-   13, X_GPIO1_IO14_RF2_2, 14, GND
+   "1","VCC_3V3","VCC_3V3","3.3V","PWR","3.3V power supply"
+   "2","GND","GND","N/A","N/A","Ground reference"
+   "3","VCC_3V3","VCC_3V3","3.3V","PWR","3.3V power supply"
+   "4","GND","GND","N/A","N/A","Ground reference"
+   "5","RF_UART3_TX","X_UART3_TX","3.3V","OUT","UART3 transmit"
+   "6","GND","GND","N/A","N/A","Ground reference"
+   "7","RF_UART3_RX","X_UART3_RX","3.3V","IN","UART3 receive"
+   "8","GND","GND","N/A","N/A","Ground reference"
+   "9","RF_GPIO1_IO10_RF2_RST","X_GPIO1_IO10","3.3V","OUT","RF2 module reset"
+   "10","GND","GND","N/A","N/A","Ground reference"
+   "11","RF_GPIO2_IO15_RF2_1","X_GPIO2_IO15","3.3V","I/O","RF2 control signal 1"
+   "12","GND","GND","N/A","N/A","Ground reference"
+   "13","RF_GPIO1_IO14_RF2_2","X_GPIO1_IO14","3.3V","I/O","RF2 control signal 2"
+   "14","GND","GND","N/A","N/A","Ground reference"
 
 .. raw:: html
 
@@ -891,13 +926,13 @@ transmit and receive data pins are:
 
    <br>
 
-+-------+------------------------+------------------------+
-| Pin   | Signal                 | Description            |
-+=======+========================+========================+
-|  1    | X_LCD_D16_UART7_TX     | UART7 Transmit Line    |
-+-------+------------------------+------------------------+
-|  2    | X_LCD_D17_UART7_RX     | UART7 Receive Line     |
-+-------+------------------------+------------------------+
++-------------------+------------------+---------------------------+---------------+--------------+-----------------------------------------------+
+| Connector Pin No  | Connector Signal | SOM Signal                | Signal Level  | Signal Type  | Description                                   |
++===================+==================+===========================+===============+==============+===============================================+
+| 1                 | OPTICAL_TX       | X_LCD_D16_UART7_TX        | 3.3V          | OUT          | UART7 transmit via IR LED (optical output)    |
++-------------------+------------------+---------------------------+---------------+--------------+-----------------------------------------------+
+| 2                 | OPTICAL_RX       | X_LCD_D17_UART7_RX        | 3.3V          | IN           | UART7 receive via phototransistor (optical in)|
++-------------------+------------------+---------------------------+---------------+--------------+-----------------------------------------------+
 
 .. raw:: html
 
@@ -944,14 +979,19 @@ devices.
 
 
 .. csv-table::
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 5, 20, 5, 20
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 25, 30, 12, 12, 25
 
-   1, X_ECSPI1_SS0,     6, X_GPIO_DC
-   2, VCC5V_IN_SW,      7, X_ECSPI1_SCLK
-   3, X_RESET#,         8, GND
-   4, VCC5V_IN_SW,      9, X_ECSPI1_MISO
-   5, X_ECSPI1_MOSI,   10, GND
+   "1","SPI_CS","X_ECSPI1_SS0","3.3V","OUT","SPI chip select"
+   "2","VCC_5V","VCC5V_IN_SW","5V","PWR","5V power supply"
+   "3","RESET","X_RESET#","3.3V","OUT","LCD reset (active low)"
+   "4","VCC_5V","VCC5V_IN_SW","5V","PWR","5V power supply"
+   "5","SPI_MOSI","X_ECSPI1_MOSI","3.3V","OUT","SPI master out slave in"
+   "6","LCD_DC","X_GPIO_DC","3.3V","OUT","Data/Command control"
+   "7","SPI_SCLK","X_ECSPI1_SCLK","3.3V","OUT","SPI clock"
+   "8","GND","GND","N/A","N/A","Ground reference"
+   "9","SPI_MISO","X_ECSPI1_MISO","3.3V","IN","SPI master in slave out"
+   "10","GND","GND","N/A","N/A","Ground reference"
 
 
 
@@ -1001,11 +1041,11 @@ tampering attempts and **X_GPIO5_1, X_GPIO5_2** pins are used.
    <br>
 
 .. csv-table::
-   :header: "Pin", "Description"
-   :widths: 20, 80
+   :header: "Connector Pin No","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 15, 30, 15, 15, 30
 
-   "X_GPIO5_1", "GPIO used for tamper detection, triggered by TP48."
-   "X_GPIO5_2", "GPIO used for tamper detection, triggered by TP49."
+   "TP48","X_GPIO5_1","3.3V","IN","Active low tamper detection input (TP48)"
+   "TP49","X_GPIO5_2","3.3V","IN","Active low tamper detection input (TP49)"
 
 .. raw:: html
 
@@ -1052,19 +1092,21 @@ Isolated Voltage connected upto 24V from external; MCU reads High (3.3V).
 
    <br>
 
-+--------+-------------------------------------------------------------+
-| Pin    | Signal                                                      |
-+========+=============================================================+
-| 1      | DIN(0–24V)_01 (VCC_3V3)                                     |
-+--------+-------------------------------------------------------------+
-| 2      | DIN(0–24V)_02 (VCC_3V3)                                     |
-+--------+-------------------------------------------------------------+
-| 3      | DIN(0–24V)_03 (VCC_3V3)                                     |
-+--------+-------------------------------------------------------------+
-| 4      | DIN(0–24V)_04 (VCC_3V3)                                     |
-+--------+-------------------------------------------------------------+
-| 5, 6   | DGND_ISO_IN (X_GPIO5_5, X_GPIO2_IO13, X_GPIO1_01)           |
-+--------+-------------------------------------------------------------+
++-------------------+----------------------+-------------------+---------------+--------------+-----------------------------------------------+
+| Connector Pin No  | Connector Signal     | SOM Signal        | Signal Level  | Signal Type  | Description                                   |
++===================+======================+===================+===============+==============+===============================================+
+| 1                 | DIN(0–24V)_01        | X_GPIO5_5         | 3.3V          | IN           | Digital input channel 1 (0–24V isolated input)|
++-------------------+----------------------+-------------------+---------------+--------------+-----------------------------------------------+
+| 2                 | DIN(0–24V)_02        | X_GPIO2_IO13      | 3.3V          | IN           | Digital input channel 2 (0–24V isolated input)|
++-------------------+----------------------+-------------------+---------------+--------------+-----------------------------------------------+
+| 3                 | DIN(0–24V)_03        | X_GPIO1_01        | 3.3V          | IN           | Digital input channel 3 (0–24V isolated input)|
++-------------------+----------------------+-------------------+---------------+--------------+-----------------------------------------------+
+| 4                 | DIN(0–24V)_04        | X_GPIO1_11        | 3.3V          | IN           | Digital input channel 4 (0–24V isolated input)|
++-------------------+----------------------+-------------------+---------------+--------------+-----------------------------------------------+
+| 5                 | DGND_ISO_IN          | DGND_ISO_IN       | N/A           | N/A          | Isolated digital ground                       |
++-------------------+----------------------+-------------------+---------------+--------------+-----------------------------------------------+
+| 6                 | DGND_ISO_IN          | DGND_ISO_IN       | N/A           | N/A          | Isolated digital ground                       |
++-------------------+----------------------+-------------------+---------------+--------------+-----------------------------------------------+
 
 .. raw:: html
 
@@ -1109,19 +1151,20 @@ configuration (Boot Mode Jumper J9).
 
 
 
-.. csv-table:: 
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 5, 25, 5, 25
+.. csv-table::
+   :header: "Connector Pin No","Connector Signal","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 25, 30, 12, 12, 25
 
-   1,  X_SD1_D2,                 10, GND
-   2,  X_SD1_D3,                 11, GND
-   3,  X_SD1_CMD,                12, GND
-   4,  VCC_3V3,                  13, GND
-   5,  X_SD1_CLK,                14, GND
-   6,  GND,                      15, GND
-   7,  X_SD1_D0,                 16, GND
-   8,  X_SD1_D1,                 17, GND
-   9,  X_UART1_RTS_B_SD_CD,      18, GND
+   "1","DAT2","X_SD1_D2","3.3V","I/O","SD data line 2"
+   "2","DAT3","X_SD1_D3","3.3V","I/O","SD data line 3"
+   "3","CMD","X_SD1_CMD","3.3V","I/O","SD command line"
+   "4","VCC","VCC_3V3","3.3V","PWR","SD card power supply"
+   "5","CLK","X_SD1_CLK","3.3V","OUT","SD clock"
+   "6","GND","GND","N/A","N/A","Ground reference"
+   "7","DAT0","X_SD1_D0","3.3V","I/O","SD data line 0"
+   "8","DAT1","X_SD1_D1","3.3V","I/O","SD data line 1"
+   "9","CD","X_UART1_RTS_B_SD_CD","3.3V","IN","Card detect signal"
+   "10–18","GND","GND","N/A","N/A","Ground (shield and return)"
 
 .. raw:: html
 
@@ -1161,26 +1204,25 @@ uses **UART5 interface**.
    <br>
    
 
-.. csv-table:: 
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 5, 25, 5, 25
+.. csv-table::
+   :header: "Connector Pin No","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 30, 12, 12, 30
 
-   1,  GND,                         17, X_UART5_RTS_B
-   2,  Not used,                   18, Not used
-   3,  Not used,                   19, Not used
-   4,  Not used,                   20, GND
-   5,  Not used,                   21, Not used
-   6,  Not used,                   22, X_LCD_VSYNC_WATCH_DOG
-   7,  Not used,                   23, Not used
-   8,  SWCLK,                      24, Not used
-   9,  SWDIO,                      25, Not used
-   10, SWO,                        26, Not used
-   11, Not used,                   27, Not used
-   12, GND,                        28, Not used
-   13, VCC_3V3_BLE,                29, Not used
-   14, X_UART5_RX (TP52),          30, X_GPIO_BLE_RST
-   15, X_UART5_TX (TP53),          31, GND
-   16, X_UART5_CTS_B,              ,
+   "1","GND","NA","NA","Ground reference"
+   "8","SWCLK","3.3V","IN","Debug clock (SWD)"
+   "9","SWDIO","3.3V","I/O","Debug data (SWD)"
+   "10","SWO","3.3V","OUT","Debug trace output"
+   "12","GND","NA","NA","Ground reference"
+   "13","VCC_3V3_BLE","3.3V","PWR","Bluetooth module power"
+   "14","X_UART5_RX","3.3V","IN","UART5 receive"
+   "15","X_UART5_TX","3.3V","OUT","UART5 transmit"
+   "16","X_UART5_CTS_B","3.3V","IN","UART5 CTS (active low)"
+   "17","X_UART5_RTS_B","3.3V","OUT","UART5 RTS (active low)"
+   "20","GND","NA","NA","Ground reference"
+   "22","X_LCD_VSYNC_WATCH_DOG","3.3V","OUT","External watchdog signal"
+   "30","X_GPIO_BLE_RST","3.3V","OUT","Bluetooth reset control"
+   "31","GND","NA","NA","Ground reference"
+
 
 
 .. raw:: html
@@ -1230,17 +1272,21 @@ interface**.
    <br>
 
 
-.. csv-table:: 
-   :header: "Pin", "Signal", "Pin", "Signal"
-   :widths: 5, 30, 5, 30
+.. csv-table::
+   :header: "Connector Pin No","SOM Signal","Signal Level","Signal Type","Description"
+   :widths: 12, 30, 12, 12, 30
 
-   1,  VCC_3V3_SEN,           8,  VCC_3V3
-   2,  VCC_3V3,               9,  Not used
-   3,  VCC_3V3,              10,  Not used
-   4,  X_CSI_FIELD_GPIO_3V3, 11,  Not used
-   5,  VCC_3V3,              12,  VCC_3V3_SEN
-   6,  GND,                  13,  X_I2C1_SCL (TP47)
-   7,  GND,                  14,  X_I2C1_SDA (TP46)
+   "1","VCC_3V3_SEN","3.3V","PWR","Sensor power supply"
+   "2","VCC_3V3","3.3V","PWR","Main 3.3V supply"
+   "3","VCC_3V3","3.3V","PWR","Main 3.3V supply"
+   "4","X_CSI_FIELD_GPIO_3V3","3.3V","IN","Interrupt / GPIO input"
+   "5","VCC_3V3","3.3V","PWR","Main 3.3V supply"
+   "6","GND","NA","NA","Ground reference"
+   "7","GND","NA","NA","Ground reference"
+   "8","VCC_3V3","3.3V","PWR","Main 3.3V supply"
+   "12","VCC_3V3_SEN","3.3V","PWR","Sensor power supply"
+   "13","X_I2C1_SCL","3.3V","I/O","I2C clock (TP47)"
+   "14","X_I2C1_SDA","3.3V","I/O","I2C data (TP46)"
 
 
 .. raw:: html
